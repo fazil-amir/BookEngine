@@ -1,0 +1,427 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400,600';
+
+@ColorGray :	#CDCDCD;
+@ColorRed :		#955858;
+@ColorGreen :	#7D9558;
+@ColorBlack :	#888888;
+
+body, html {
+	margin: 0;
+	padding: 0;
+	font-family: 'Raleway', sans-serif;
+}
+.Container {
+	width: 980px;
+	margin: auto;
+	position: relative;
+
+	&.Home {
+		height: 100vh;
+		top:0;
+		left: 0;
+		right: 0;
+		bottom: 0;
+	}
+
+	&.ShowBook , &.SearchBooks{
+		margin-top: 20px;
+		.SearchContainer { 
+			width: 100%;
+		}
+	}
+
+}
+
+.SearchContainer {
+	display: table;
+	width: 700px;
+	margin-left: auto;
+	margin-right: auto;
+	height: 100%;
+
+	.SearchWrapper {
+		display: table-cell;
+		vertical-align: middle;
+		
+		div {
+			position: relative;
+			float:left;			
+
+			&:first-child {
+				width: 80%;
+
+				.TitleSuggestion {
+					position: absolute;
+					top: 58px;
+					left: 0;
+					right: 0;
+					bottom: 0;
+					padding: 0;
+					margin: 0;
+					font-weight: 400;
+					height: 300px;
+					overflow-y: auto;
+
+					li {						
+						margin: 0;
+						padding: 10px;
+						list-style-type: none;
+						cursor: pointer;
+						transition:all 0.5s;
+						font-size: 20px;
+						background-color: rgba(221, 221, 221, 0.90);
+
+						a {
+							color:inherit;
+							text-decoration: none;
+						}
+
+						&:hover {
+							color: @ColorGreen;
+						}
+					}
+
+					&::-webkit-scrollbar {
+					    width: 8px;
+					}
+
+					&::-webkit-scrollbar-track {
+					   background-color: @ColorGray; 
+					}
+
+					&::-webkit-scrollbar-thumb {
+						background-color: @ColorBlack;
+					}
+				}
+			}
+
+			&:last-child {
+				width: 20%;
+				margin-left: -1px;
+			}
+
+			input, button {
+				width: 100%;
+				border-radius: 0;
+				border: 1px solid @ColorGray;
+				line-height: 50px;
+				padding-left: 10px;
+				box-sizing: border-box;
+				font-family: inherit;
+				font-size: 28px;
+				font-weight: 300;
+				color:@ColorBlack;
+				transition:color 0.5s;
+				-webkit-appearance: none;
+
+				&:focus{
+					outline: none;
+				}
+
+				&.SearchBookIOS {
+					margin-top: 0px;
+					height: 52px;
+					line-height: normal;
+					font-size: 20px;
+				}
+			}
+
+			button {				
+				cursor: pointer;
+
+				&:hover {
+					color:@ColorGreen;
+				}
+			}
+
+		}
+
+	}
+
+
+}
+
+
+
+.BookWrapper {
+
+	.Headline {
+		padding: 20px 0;
+	    font-size: 30px;
+	    border-bottom: 1px solid @ColorGray;
+	    color:@ColorGreen;
+	    margin-bottom: 10px;
+	}
+
+	.SectionLeft {
+		width: 25%;
+		float: left;
+
+		.CoverImage {
+			img {
+				width: 100%;
+			}
+		}
+	}
+
+	.SectionRight {
+		width: 72%;
+		float: right;	
+	}
+
+	.BoxWrapper {
+		width: ~"calc( ( 100% / 3 ) - 21px)";
+		margin-top: 30px;
+		box-sizing: border-box;
+		border:1px solid @ColorGray;
+		min-height: 270px;
+		float: left;
+		cursor: pointer;
+		position: relative;
+
+		&:nth-child(3n+2){
+			margin-left: 30px;
+			margin-right: 30px;
+		}
+		&:nth-child(3n) {
+			&:after {
+				clear:both;
+				content: '';
+				display: block;
+			}
+		}
+
+		.CoverImage{	
+			padding: 20px 0;
+			img {
+				height: 200px;
+			    margin: auto;
+			    display: block;
+			}
+		}
+
+		.BookDescription {
+			text-align: center;
+			border-top:1px solid @ColorGray;
+			padding: 20px 0;
+			margin-top: 20px;
+			padding-bottom: 0;
+			font-size: 20px;
+			color: @ColorGreen;
+		}
+
+		a {
+			position: absolute;
+			opacity: 0;
+			width: 100%;
+			height: 100%;
+			top: 0;
+			buttom:0;
+			right: :0;
+			left: 0;
+		}
+	}
+
+	.Row {
+		margin-bottom: 10px;
+		margin-top: 10px;
+		line-height: 35px;
+		a {
+			text-transform: capitalize;
+			color: @ColorBlack;
+		}
+		span {
+			text-transform: capitalize;
+			color: @ColorBlack;
+			margin-right: 15px;
+
+			&:after {
+				content: ':'
+			}
+		}
+	}
+
+	&:after {
+			content:'';
+			display: block;
+			clear: both;
+		}
+}
+
+@media ( max-width: 1050px ) {
+
+	.Container {
+		width: 90%;
+	}
+
+	.SearchContainer {
+		width: 100%;
+	}
+
+}
+
+@media ( max-width: 980px ) {
+	.BookWrapper {
+		.BoxWrapper {
+			width: ~"calc( ( 100% / 2 ) - 21px)";
+
+			&:nth-child(3n+2){
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+
+			&:nth-child(2n+2){
+				margin-left: 30px;
+			}
+			&:nth-child(3n) {
+				&:after {
+					clear:none;
+					content: '';
+					display: none;
+				}
+			}
+
+			&:nth-child(2n) {
+				&:after {
+					clear:both;
+					content: '';
+					display: block;
+				}
+			}
+		}
+	}
+}
+
+
+@media ( max-width: 680px ) {
+
+	.SearchContainer {
+
+		.SearchWrapper {
+			
+			div {
+				&:first-child {
+					width: 70%;
+				}
+
+				&:last-child {
+					width: 30%;
+				}
+
+			}
+
+		}
+
+	}
+
+	.BookWrapper {
+
+		.Headline {
+			padding: 10px 0;
+		    font-size: 20px;
+		}
+
+		.BoxWrapper {
+			width: ~"calc( 100% - 21px)";
+
+			&:nth-child(3n+2){
+				margin-left: 0px;
+				margin-right: 0px;
+			}
+
+			&:nth-child(2n+2){
+				margin-left: 0px;
+			}
+
+			&:nth-child(1n) {
+				&:after {
+					clear:none;
+					content: '';
+					display: none;
+				}
+			}
+			
+		}
+
+		.SectionLeft {
+			width: 100%;
+			float: none;
+
+			.CoverImage {
+				img {
+					margin: auto;
+					display: block;
+					width: auto;
+				}
+			}
+		}
+
+		.SectionRight {
+			width: 100%;
+			float: none;	
+		}
+
+		.Row {
+			margin-bottom: 10px;
+			margin-top: 10px;
+			line-height: 35px;
+
+			a {
+				text-transform: capitalize;
+				color: @ColorBlack;
+				text-decoration: none;
+			}
+			span {
+				text-transform: capitalize;
+				color: @ColorBlack;
+				margin-right: 15px;
+
+				&:after {
+					content: ':'
+				}
+			}
+		}
+
+		&:after {
+				content:'';
+				display: block;
+				clear: both;
+			}
+	}
+
+}
+
+@media ( max-width: 480px ) {
+
+	.SearchContainer {
+
+		.SearchWrapper {
+			
+			div {
+				&:first-child {
+					width: 80%;
+				}
+
+				&:last-child {
+					width: 20%;
+					button {
+						font-size: 0;
+						background-image: url('SearchIcon.svg');
+						background-size: 50%;
+						background-position: center;
+						background-repeat: no-repeat;
+						transition:all 0.5s;
+
+						&:hover {
+							background-size: 60%;
+						}
+					}
+				}
+
+			}
+
+		}
+
+	}
+
+}

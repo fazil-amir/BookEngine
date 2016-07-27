@@ -1,0 +1,316 @@
+@import 'https://fonts.googleapis.com/css?family=Raleway:300,400,600';
+body,
+html {
+  margin: 0;
+  padding: 0;
+  font-family: 'Raleway', sans-serif;
+}
+.Container {
+  width: 980px;
+  margin: auto;
+  position: relative;
+}
+.Container.Home {
+  height: 100vh;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+}
+.Container.ShowBook,
+.Container.SearchBooks {
+  margin-top: 20px;
+}
+.Container.ShowBook .SearchContainer,
+.Container.SearchBooks .SearchContainer {
+  width: 100%;
+}
+.SearchContainer {
+  display: table;
+  width: 700px;
+  margin-left: auto;
+  margin-right: auto;
+  height: 100%;
+}
+.SearchContainer .SearchWrapper {
+  display: table-cell;
+  vertical-align: middle;
+}
+.SearchContainer .SearchWrapper div {
+  position: relative;
+  float: left;
+}
+.SearchContainer .SearchWrapper div:first-child {
+  width: 80%;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion {
+  position: absolute;
+  top: 58px;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  padding: 0;
+  margin: 0;
+  font-weight: 400;
+  height: 300px;
+  overflow-y: auto;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion li {
+  margin: 0;
+  padding: 10px;
+  list-style-type: none;
+  cursor: pointer;
+  transition: all 0.5s;
+  font-size: 20px;
+  background-color: rgba(221, 221, 221, 0.9);
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion li a {
+  color: inherit;
+  text-decoration: none;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion li:hover {
+  color: #7d9558;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion::-webkit-scrollbar {
+  width: 8px;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion::-webkit-scrollbar-track {
+  background-color: #cdcdcd;
+}
+.SearchContainer .SearchWrapper div:first-child .TitleSuggestion::-webkit-scrollbar-thumb {
+  background-color: #888888;
+}
+.SearchContainer .SearchWrapper div:last-child {
+  width: 20%;
+  margin-left: -1px;
+}
+.SearchContainer .SearchWrapper div input,
+.SearchContainer .SearchWrapper div button {
+  width: 100%;
+  border-radius: 0;
+  border: 1px solid #cdcdcd;
+  line-height: 50px;
+  padding-left: 10px;
+  box-sizing: border-box;
+  font-family: inherit;
+  font-size: 28px;
+  font-weight: 300;
+  color: #888888;
+  transition: color 0.5s;
+  -webkit-appearance: none;
+}
+.SearchContainer .SearchWrapper div input:focus,
+.SearchContainer .SearchWrapper div button:focus {
+  outline: none;
+}
+.SearchContainer .SearchWrapper div input.SearchBookIOS,
+.SearchContainer .SearchWrapper div button.SearchBookIOS {
+  margin-top: 0px;
+  height: 52px;
+  line-height: normal;
+  font-size: 20px;
+}
+.SearchContainer .SearchWrapper div button {
+  cursor: pointer;
+}
+.SearchContainer .SearchWrapper div button:hover {
+  color: #7d9558;
+}
+.BookWrapper .Headline {
+  padding: 20px 0;
+  font-size: 30px;
+  border-bottom: 1px solid #cdcdcd;
+  color: #7d9558;
+  margin-bottom: 10px;
+}
+.BookWrapper .SectionLeft {
+  width: 25%;
+  float: left;
+}
+.BookWrapper .SectionLeft .CoverImage img {
+  width: 100%;
+}
+.BookWrapper .SectionRight {
+  width: 72%;
+  float: right;
+}
+.BookWrapper .BoxWrapper {
+  width: calc( ( 100% / 3 ) - 21px);
+  margin-top: 30px;
+  box-sizing: border-box;
+  border: 1px solid #cdcdcd;
+  min-height: 270px;
+  float: left;
+  cursor: pointer;
+  position: relative;
+}
+.BookWrapper .BoxWrapper:nth-child(3n+2) {
+  margin-left: 30px;
+  margin-right: 30px;
+}
+.BookWrapper .BoxWrapper:nth-child(3n):after {
+  clear: both;
+  content: '';
+  display: block;
+}
+.BookWrapper .BoxWrapper .CoverImage {
+  padding: 20px 0;
+}
+.BookWrapper .BoxWrapper .CoverImage img {
+  height: 200px;
+  margin: auto;
+  display: block;
+}
+.BookWrapper .BoxWrapper .BookDescription {
+  text-align: center;
+  border-top: 1px solid #cdcdcd;
+  padding: 20px 0;
+  margin-top: 20px;
+  padding-bottom: 0;
+  font-size: 20px;
+  color: #7d9558;
+}
+.BookWrapper .BoxWrapper a {
+  position: absolute;
+  opacity: 0;
+  width: 100%;
+  height: 100%;
+  top: 0;
+  buttom: 0;
+  right: :0;
+  left: 0;
+}
+.BookWrapper .Row {
+  margin-bottom: 10px;
+  margin-top: 10px;
+  line-height: 35px;
+}
+.BookWrapper .Row a {
+  text-transform: capitalize;
+  color: #888888;
+}
+.BookWrapper .Row span {
+  text-transform: capitalize;
+  color: #888888;
+  margin-right: 15px;
+}
+.BookWrapper .Row span:after {
+  content: ':';
+}
+.BookWrapper:after {
+  content: '';
+  display: block;
+  clear: both;
+}
+@media (max-width: 1050px) {
+  .Container {
+    width: 90%;
+  }
+  .SearchContainer {
+    width: 100%;
+  }
+}
+@media (max-width: 980px) {
+  .BookWrapper .BoxWrapper {
+    width: calc( ( 100% / 2 ) - 21px);
+  }
+  .BookWrapper .BoxWrapper:nth-child(3n+2) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .BookWrapper .BoxWrapper:nth-child(2n+2) {
+    margin-left: 30px;
+  }
+  .BookWrapper .BoxWrapper:nth-child(3n):after {
+    clear: none;
+    content: '';
+    display: none;
+  }
+  .BookWrapper .BoxWrapper:nth-child(2n):after {
+    clear: both;
+    content: '';
+    display: block;
+  }
+}
+@media (max-width: 680px) {
+  .SearchContainer .SearchWrapper div:first-child {
+    width: 70%;
+  }
+  .SearchContainer .SearchWrapper div:last-child {
+    width: 30%;
+  }
+  .BookWrapper .Headline {
+    padding: 10px 0;
+    font-size: 20px;
+  }
+  .BookWrapper .BoxWrapper {
+    width: calc( 100% - 21px);
+  }
+  .BookWrapper .BoxWrapper:nth-child(3n+2) {
+    margin-left: 0px;
+    margin-right: 0px;
+  }
+  .BookWrapper .BoxWrapper:nth-child(2n+2) {
+    margin-left: 0px;
+  }
+  .BookWrapper .BoxWrapper:nth-child(1n):after {
+    clear: none;
+    content: '';
+    display: none;
+  }
+  .BookWrapper .SectionLeft {
+    width: 100%;
+    float: none;
+  }
+  .BookWrapper .SectionLeft .CoverImage img {
+    margin: auto;
+    display: block;
+    width: auto;
+  }
+  .BookWrapper .SectionRight {
+    width: 100%;
+    float: none;
+  }
+  .BookWrapper .Row {
+    margin-bottom: 10px;
+    margin-top: 10px;
+    line-height: 35px;
+  }
+  .BookWrapper .Row a {
+    text-transform: capitalize;
+    color: #888888;
+    text-decoration: none;
+  }
+  .BookWrapper .Row span {
+    text-transform: capitalize;
+    color: #888888;
+    margin-right: 15px;
+  }
+  .BookWrapper .Row span:after {
+    content: ':';
+  }
+  .BookWrapper:after {
+    content: '';
+    display: block;
+    clear: both;
+  }
+}
+@media (max-width: 480px) {
+  .SearchContainer .SearchWrapper div:first-child {
+    width: 80%;
+  }
+  .SearchContainer .SearchWrapper div:last-child {
+    width: 20%;
+  }
+  .SearchContainer .SearchWrapper div:last-child button {
+    font-size: 0;
+    background-image: url('SearchIcon.svg');
+    background-size: 50%;
+    background-position: center;
+    background-repeat: no-repeat;
+    transition: all 0.5s;
+  }
+  .SearchContainer .SearchWrapper div:last-child button:hover {
+    background-size: 60%;
+  }
+}
